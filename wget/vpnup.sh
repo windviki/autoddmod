@@ -3570,7 +3570,7 @@ if [ $(nvram get exroute_enable) -eq 1 ]; then
 		echo "$INFO $(date "+%d/%b/%Y:%H:%M:%S") fetching exceptional routes for $i"  >> $LOG
 		if [ -d $EXROUTEDIR -a ! -f $EXROUTEDIR/$i ]; then
 			echo "$INFO $(date "+%d/%b/%Y:%H:%M:%S") missing $EXROUTEDIR/$i, wget it now."  >> $LOG
-			wget http://autoddvpn.googlecode.com/svn/trunk/exroute.d/$i -O $EXROUTEDIR/$i 
+			wget http://raw.githubusercontent.com/windviki/autodd/master/exroute.d/$i -O $EXROUTEDIR/$i 
 		fi
 		if [ ! -f $EXROUTEDIR/$i ]; then
 			echo "$INFO $(date "+%d/%b/%Y:%H:%M:%S") $EXROUTEDIR/$i not found, skip."  >> $LOG
